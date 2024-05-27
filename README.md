@@ -1,33 +1,12 @@
 # Slur-Police
-A Discord bot which pings people when a slur is said, made by request.
+This is a template for a Discord Bot meant to be on multiple servers as the same instance.
 
-Functionality includes:
-- Pinging a role whenever someone slurs
-- Autotimeout whenever someone slurs
-- Creating a log of pinned messages
-- Logging whenever someone slurs
-- Autodeleting and logging discord invites
-- French.
+This archetype of bot is designed to exist in multiple servers using the same web server. Because complications can arrise when saving local variables, this bot bypasses this issue and just creates a json file for each unique server it's registered in. This way, any server specific variables (like a message logging channel, blacklisted users, etc) can be stored with no issue. Furthermore, it also allows the bot to safely be shut off without losing data.
+
 
 # Bot commands
 
-### /register
-Registers the server to the bot. The bot will create a template json file in the guilds folder specifically for the server, allowing custom settings for each server the bot is in.
-
-### /setlogchannel
-Sets the current channel as the log, and any moderation activities will be logged there.
-
-### /setpinlogchannel
-Sets the current channel as the pin log. Anytime a new message is pinned within the server, it will be logged in the channel.
-
-### /settimeouttime
-Sets how long to timeout each user when a slur is detected, in milliseconds.
-
-### /setpingroleid 
-Sets the role to ping whenever a slur is detected. Note that it must be the role ID, not the role itself.
-
-### /ping
-Pings the bot, returns pong if online.
+Check the commands folder to see commands. The template can be copied and pasted as needed.
 
 
 
