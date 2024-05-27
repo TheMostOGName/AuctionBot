@@ -1,4 +1,4 @@
-# Slur-Police
+# Template
 This is a template for a Discord Bot meant to be on multiple servers as the same instance.
 
 This archetype of bot is designed to exist in multiple servers using the same web server. Because complications can arrise when saving local variables, this bot bypasses this issue and just creates a json file for each unique server it's registered in. This way, any server specific variables (like a message logging channel, blacklisted users, etc) can be stored with no issue. Furthermore, it also allows the bot to safely be shut off without losing data.
