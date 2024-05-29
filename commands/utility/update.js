@@ -27,26 +27,33 @@ module.exports = {
             let currInfo = require(filePath); 
                 
                 //Check if array vars for server specfic features have been defined. Keep their value if they do. Add more values as needed
-                //THIS FILE IS CURRENTLY A TEMPLATE. REPLACE ANYTHING IN ANGLE BRACKETS AS NEEDED.
 
-                //<Value1> (Array)
-                if (typeof currInfo.<value1> === 'undefined' || currInfo.<value1> === null) {
-                    var <value1> = [];
+                //NormalID (String)
+                if (typeof currInfo.normalAuctionID === 'undefined' || currInfo.normalAuctionID === null) {
+                    var normalAuctionID = "";
                 } else {
-                    var <value1> = currInfo.<value1>
+                    var normalAuctionID = currInfo.normalAuctionID
                 }
 
-                //<Value2> (String)
-                if (typeof currInfo.<value2> === 'undefined' || currInfo.<value2> === null) {
-                    var <value2> = "";
+                //starAuctionID (String)
+                if (typeof currInfo.starAuctionID === 'undefined' || currInfo.starAuctionID === null) {
+                    var starAuctionID = "";
                 } else {
-                    var logID = currInfo.logID
+                    var starAuctionID = currInfo.starAuctionID
+                }
+
+                //rule3AuctionID (String)
+                if (typeof currInfo.rule3AuctionID === 'undefined' || currInfo.rule3AuctionID === null) {
+                    var rule3AuctionID = "";
+                } else {
+                    var rule3AuctionID = currInfo.rule3AuctionID
                 }
 
                 var jsonArray = { 
                     "guildId"  :  interaction.guild.id, 
-                    "<value1Name>" : <value1>,
-                    "<value2Name>"   :  <value2>,
+                    "normalAuctionID" :  normalAuctionID,
+                    "starAuctionID"   :  starAuctionID,
+                    "rule3AuctionID"  :  rule3AuctionID
                     }
                 
                 

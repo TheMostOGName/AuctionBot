@@ -14,14 +14,22 @@ module.exports = {
         .setDefaultMemberPermissions(PermissionFlagsBits.ManageGuild),
 	async execute(interaction) {
         const filePath = './guilds/' + interaction.guild.id + '.json';
+        var dirPath = './guilds/' + interaction.guild.id;
 
+        //make a directory for the server
+        if (!fs.existsSync(dirPath)){
+            fs.mkdirSync(dirPath, { recursive: true });
+        }
+
+        //make the json file for the server
         fs.access(filePath, fs.constants.F_OK, (err) => {
             if (err) {
-                var <value1> = []
+                //var <value1> = []
                 var jsonArray = { 
                     "guildId"  :  interaction.guild.id, 
-                    "<value1Name>" : <value1>,
-                    "<value2Name>"   :  "",
+                    "normalAuctionID" : "",
+                    "starAuctionID"   :  "",
+                    "rule3AuctionID"    :  ""
                     }
                 
                 require("fs").writeFileSync(filePath, JSON.stringify(jsonArray));
