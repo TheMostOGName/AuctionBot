@@ -4,15 +4,15 @@ const fs = require('fs');
 
 module.exports = {
 	data: new SlashCommandBuilder()
-		.setName('setRule3AuctionID')
+		.setName('setrule3auctionid')
 		.setDescription('Set the category ID for Rule 3 auctions')
         .setDefaultMemberPermissions(PermissionFlagsBits.ManageGuild)
-		.addIntegerOption(option =>
+		.addStringOption(option =>
 			option.setName('categoryid')
 				.setDescription('The category ID')
 				.setRequired(true)),
 	async execute(interaction) {
-		const id = interaction.options.getInteger('categoryid');
+		const id = interaction.options.getString('categoryid');
         console.log(id)
         try {
             const guildId = interaction.guild.id;
